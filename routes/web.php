@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Погода
+Route::get('/weather', 'WeatherController@index')->name('weather');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'manager', 'namespace'=>'Manager', 'middleware'=>['auth']], function(){
+  Route::resource('/order', 'OrderController', ['as'=>'manager']);
+});
