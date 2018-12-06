@@ -36,6 +36,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                      <li><a href="{{ route('weather') }}">Погода</a></li>
                       @auth
                         <li><a href="{{ route('manager.order.index') }}">Заказы</a></li>
                       @endauth
